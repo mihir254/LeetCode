@@ -1,5 +1,5 @@
 class Solution:
-    def findShortestSubArray(self, nums: List[int]) -> int:
+    def findShortestSubArray(self, nums) -> int:
         store = {}
         for i in range(len(nums)):
             if nums[i] in store:
