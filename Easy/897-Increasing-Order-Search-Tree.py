@@ -8,15 +8,11 @@ class Solution:
     def increasingBST(self, root: TreeNode) -> TreeNode:
         inorder = []
         self.inorderTraversal(root, inorder)
-        node = TreeNode()
-        temp, temp1 = node, node
-        for i in inorder:
-            temp.val = i
-            temp.right = TreeNode()
+        node = TreeNode(inorder[0])
+        temp = node
+        for i in inorder[1:]:
+            temp.right = TreeNode(i)
             temp = temp.right
-        for i in range(len(inorder)-1):
-            temp1 = temp1.right
-        temp1.right = None
         return node
         
     def inorderTraversal(self, node, inorder):
